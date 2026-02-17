@@ -1,0 +1,48 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* רקע */
+#template-bg{
+  position: fixed;
+  inset: 0;            /* במקום top/right/left */
+  width: 100%;
+  height: 100dvh;      /* ⭐ הפתרון האמיתי */
+
+  background-image: url("/public/images/travel-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  text-align: center;
+  z-index: 1;
+}
+
+/* הדמות */
+.gili-picture{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+
+  width: 40vw;
+  height: 80vh;
+
+  background-image: url("/public/images/gili.png");
+  background-size: contain;
+  background-position: bottom left;
+  background-repeat: no-repeat;
+
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* התוכן */
+.content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  min-height: 100dvh;  /* ⭐ גם כאן */
+  padding-bottom: 40px;
+}

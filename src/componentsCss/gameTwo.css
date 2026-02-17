@@ -1,0 +1,341 @@
+/* html {
+  height: 100%;
+  overflow: hidden;
+  overscroll-behavior: none;
+  touch-action: none;
+}
+
+body {
+  margin: 0;
+  direction: rtl;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
+  overflow: hidden;
+} */
+
+body {
+  margin: 0;
+  direction: rtl;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html,
+body {
+  overflow: hidden;
+  height: 100%;
+  overscroll-behavior: none;
+  touch-action: none;
+}
+
+.game-two-container {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: visible;
+}
+
+/* 4 רבעי מסך */
+.places-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+/* בסיס לכל ריבוע */
+.place-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+  transition: 0.2s;
+  position: relative;
+  pointer-events: auto;
+  z-index: 1;
+}
+
+.place-box h3 {
+  font-size: 26px;
+  color: #1b5e20;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 10px 28px;
+  background-color: rgba(255, 255, 255, 0.6); /* חצי שקוף */
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+
+  line-height: 1.6;
+  letter-spacing: 0.3px;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.jerusalem {
+  background-image: url("/public/images/jerusalem.jpg");
+   background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;}
+
+.jezreelValley {
+  background-image: url("/public/images/jezreelValley.webp");
+   background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;}
+
+.deadSea {
+  background-image: url("/public/images/deadSea.jpg");
+   background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+.roshHanikra {
+ background-image: url("/public/images/roshHanikra.png");
+   background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* אפקט בזמן גרירה */
+.drag-hover {
+  filter: brightness(0.9);
+}
+
+/* משפט במרכז */
+.current-sentence {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 16px 28px;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: grab;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  z-index: 20;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  max-width: 80%;
+  touch-action: none;
+  -webkit-touch-callout: none;
+}
+
+.current-sentence:active {
+  cursor: grabbing;
+}
+
+/* משפטים בתוך ריבוע */
+.sentence-item {
+  background: white;
+  padding: 10px 16px;
+  border-radius: 20px;
+  margin-top: 10px;
+  cursor: grab;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  touch-action: none;
+  -webkit-touch-callout: none;
+}
+
+.sentence-item:active {
+  cursor: grabbing;
+}
+
+/* חיווי */
+.correct {
+  border: 2px solid #4caf50;
+}
+
+.wrong {
+  border: 2px solid #e53935;
+}
+
+/* כפתורים */
+.buttons-container {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+  z-index: 25;
+  pointer-events: auto;
+}
+
+.check-btn,
+.finish-btn {
+  padding: 12px 30px;
+  border-radius: 30px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.check-btn {
+  background-color: #1b5e20;
+  color: white;
+}
+
+.finish-btn {
+  border: 1px solid #1b5e20;
+  background: transparent;
+  color: #1b5e20;
+}
+
+.restart-btn {
+  padding: 12px 30px;
+  border-radius: 30px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+
+  background: linear-gradient(135deg, #4caf50, #2e7d32);
+  color: white;
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  transition: all 0.25s ease;
+}
+
+/* אפקט מעבר עכבר */
+.restart-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
+}
+
+/* אפקט לחיצה */
+.restart-btn:active {
+  transform: scale(0.96);
+}
+
+/* כהות כללית כשגוררים */
+.dimmed {
+  filter: brightness(0.5);
+  transition: 0.2s ease;
+}
+
+/* הריבוע שעליו נמצאים */
+.active {
+  filter: brightness(1);
+  transform: scale(1.03);
+  z-index: 5;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Mobile and iPhone SE Responsive Design */
+@media (max-width: 768px) {
+  .game-two-container {
+    width: 100%;
+    height: 100%;
+  }
+
+  .place-box {
+    padding-top: 20px;
+  }
+
+  .place-box h3 {
+    font-size: 18px;
+    padding: 8px 20px;
+  }
+
+  .current-sentence {
+    font-size: 14px;
+    padding: 12px 20px;
+  }
+
+  .sentence-item {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  .buttons-container {
+    bottom: 20px;
+    gap: 10px;
+  }
+
+  .check-btn,
+  .finish-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .game-two-container {
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .places-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+  }
+
+  .place-box {
+    padding-top: 10px;
+  }
+
+  .place-box h3 {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+
+  .current-sentence {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 11px;
+    padding: 8px 12px;
+    max-width: 85%;
+    z-index: 20;
+  }
+
+  .sentence-item {
+    font-size: 10px;
+    padding: 5px 8px;
+    margin-top: 3px;
+  }
+
+  .buttons-container {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 5px;
+    width: calc(100% - 20px);
+    max-width: 90vw;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+
+  .check-btn,
+  .finish-btn {
+    padding: 8px 12px;
+    font-size: 11px;
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .restart-btn {
+    flex: 1;
+    min-width: 0;
+    padding: 8px 12px;
+  }
+}

@@ -1,0 +1,165 @@
+#place-bg{
+  position: fixed;
+  top:0;
+  right:0;
+  left:0;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  text-align: center;
+  z-index: 1;
+}
+
+.deadSea{
+    background-image: url("/public/images/deadSea.jpg");
+}
+
+.jerusalem{
+    background-image: url("/public/images/jerusalem.jpg");
+}
+
+.roshHainkra{
+    background-image: url("/public/images/roshHanikra.png");
+}
+
+.jezreelValley{
+    background-image: url("/public/images/jezreelValley.webp");
+}
+
+.gili-picture{
+  position: absolute;
+  bottom:0vh;
+  left:-15vh;
+  width: 40vw;
+  height: 80vh;
+  background-image: url("/public/images/gili.png");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+
+.message{
+    font-size: x-large;
+ position: absolute;
+ top:35vh;
+ left:78vh;
+ display: flex;
+justify-content: center;
+align-items: center;    
+ width: 30vw;
+ padding: 20px 30px;
+  background-color: rgba(255, 255, 255, 0.6); /* חצי שקוף */
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+  line-height: 1.8;
+  letter-spacing: 0.3px;
+}
+
+.next-destination-btn {
+  position: absolute;
+  bottom: 30vh;
+  right: 65vh;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.2); /* שקיפות */
+  backdrop-filter: blur(10px); /* טשטוש רקע */
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50px; /* קצוות עגולים */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.next-destination-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: translateY(-3px); /* קפיצה קלה למעלה */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile and iPhone SE Responsive Design */
+@media (max-width: 768px) {
+  #place-bg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .gili-picture {
+    bottom: 0;
+    left: -10vh;
+    width: 50vw;
+    height: 60vh;
+  }
+
+  #place-name {
+    top: 5vh;
+    right: -20vh;
+    width: 30vw;
+    font-size: 0.9rem;
+  }
+
+  .message {
+    font-size: large;
+    top: 30vh;
+    left: 60vw;
+    width: 40vw;
+    padding: 15px 20px;
+  }
+
+  .next-destination-btn {
+    bottom: 25vh;
+    right: 50vh;
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  #place-bg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .gili-picture {
+    bottom: 0;
+    left: -5vh;
+    width: 60vw;
+    height: 50vh;
+    opacity: 0.8;
+  }
+
+  #place-name {
+    position: relative;
+    top: 10px;
+    right: auto;
+    width: 90%;
+    margin: 0 auto;
+    font-size: 0.8rem;
+    padding: 5px 10px;
+  }
+
+  .message {
+    font-size: medium;
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 90%;
+    margin: 20px auto;
+    padding: 12px 15px;
+  }
+
+  .next-destination-btn {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    margin: 20px auto;
+    padding: 10px 18px;
+    font-size: 12px;
+  }
+}

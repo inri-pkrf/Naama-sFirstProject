@@ -1,0 +1,171 @@
+.games-intro-wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, #eaf3f8, #d7e7f0);
+  direction: rtl;
+}
+
+.games-intro-card {
+  background: white;
+  width: 500px;
+  max-width: 90%;
+  padding: 40px;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  animation: fadeInUp 0.6s ease;
+}
+
+.games-title {
+  font-size: 32px;
+  color: #9B785D;
+  margin-bottom: 10px;
+}
+
+.games-subtitle {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.games-text {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+.games-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.main-btn {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #9B785D, #caa892);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.main-btn:hover {
+  transform: scale(1.05);
+}
+
+.secondary-btn {
+  flex: 1;
+  padding: 12px;
+  border-radius: 20px;
+  border: 2px solid #9B785D;
+  background: white;
+  color: #9B785D;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.secondary-btn:hover {
+  background: #f4eee9;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Mobile and iPhone SE Responsive Design */
+@media (max-width: 768px) {
+  .games-intro-wrapper {
+    padding: 20px;
+  }
+
+  .games-intro-card {
+    width: 100%;
+    max-width: 100%;
+    padding: 30px 20px;
+    border-radius: 20px;
+  }
+
+  .games-title {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+
+  .games-subtitle {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  .games-text {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  .games-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .main-btn,
+  .secondary-btn {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .games-intro-wrapper {
+    padding: 10px;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .games-intro-card {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px 15px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  .games-title {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+
+  .games-subtitle {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .games-text {
+    font-size: 12px;
+    line-height: 1.4;
+    margin-bottom: 15px;
+  }
+
+  .games-buttons {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .main-btn,
+  .secondary-btn {
+    padding: 10px 12px;
+    font-size: 13px;
+    border-radius: 15px;
+  }
+}

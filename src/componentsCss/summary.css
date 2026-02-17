@@ -1,0 +1,177 @@
+body{
+  direction: rtl;
+  overflow-x: hidden;
+}
+
+#summary-title{
+  background-color: rgba(255,255,255,0.6);
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+  padding: 6px 16px;
+  text-align: center;
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+#repeat{
+  position: absolute;
+  top: -1vh;
+  left: 5vw;
+  width: 200px;
+  height: 200px;
+  background-image: url("/public/images/again.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: blink 1.5s infinite;
+}
+
+#repeat:hover{
+  cursor: pointer;
+}
+
+@keyframes blink {
+  0%,100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+#container-gallery{
+  position: absolute;
+  top: 20vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 35vw;
+}
+
+#place-name{
+  width: fit-content;
+  margin: 0 auto 10px;
+
+  background-color: rgba(255,255,255,0.6);
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+
+  padding: 6px 16px;
+  text-align: center;
+}
+
+.slide-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slide-image {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+#container-gallery .slick-dots {
+  bottom: -30px;
+}
+
+#container-gallery .slick-dots li button:before {
+  font-size: 16px !important;
+  color: rgb(91,141,112) !important;
+  opacity: 1 !important;
+}
+
+#container-gallery .slick-dots li.slick-active button:before {
+  color: rgb(10,87,49) !important;
+}
+
+@media (max-width: 768px){
+
+  #summary-title{
+    font-size: 1.3rem;
+    top: 3%;
+  }
+
+  #repeat{
+    width: 55px;
+    height: 55px;
+  }
+
+  #container-gallery{
+    width: 90vw;
+    top: 18vh;
+  }
+
+  #place-name{
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+
+  body{
+    overflow-y: auto;
+  }
+
+  #summary-title {
+    position: relative;
+    margin: 10px auto;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: fit-content;
+  }
+
+  #repeat {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: 45px;
+    height: 45px;
+  }
+
+  #container-gallery {
+    position: relative;   /* 👈 לא absolute */
+    top: auto;
+    left: auto;
+    transform: none;
+
+    width: 92vw;
+    margin: 10px auto 30px;
+  }
+
+  #place-name {
+    margin: 8px auto;
+    font-size: 0.9rem;
+  }
+
+  .slide-image {
+    width: 92vw;
+    height: auto;
+    max-height: 60vh;
+    border-radius: 16px;
+  }
+
+  #container-gallery .slick-dots {
+    margin-top: 10px;
+  }
+}
+
+/* ===== iPhone SE specific fix ===== */
+@media (max-width: 380px) {
+
+  #container-gallery{
+    width: 94vw !important;
+    top: 5vh !important;
+  }
+
+  .slide-image{
+    width: 94vw !important;
+    max-height: 30vh !important;
+  }
+
+  #place-name{
+    font-size: 0.85rem;
+  }
+
+}

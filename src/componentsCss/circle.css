@@ -1,0 +1,143 @@
+.circle {
+  width: 10vw;
+  height: 17vh;
+  border-radius: 50%;
+  overflow: hidden;
+  position: absolute;
+  perspective: 1000px;
+  z-index: 10;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.place1{
+    bottom: 15vh;
+    left: 37vh;
+}
+
+.place2{
+    bottom: 35vh;
+    left: 97vh;
+}
+
+.place3{
+    bottom: 37vh;
+    right: 7vh;
+}
+
+.place4{
+    bottom: 75vh;
+    right: 45vh;
+}
+
+.circle-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.circle:hover .circle-inner {
+  transform: rotateY(180deg);
+}
+
+.circle-front, .circle-back {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.circle-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.circle-back {
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotateY(180deg);
+}
+
+.circle:hover {
+  animation: glow 1s infinite alternate;
+  cursor: pointer;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px 4px rgba(59, 121, 69, 0.8);
+  }
+  50% {
+    box-shadow: 0 0 20px 8px rgba(30, 90, 6, 1);
+  }
+  100% {
+    box-shadow: 0 0 10px 4px rgba(59, 121, 69, 0.8);
+  }
+}
+/* Mobile and iPhone SE Responsive Design */
+@media (max-width: 768px) {
+  .circle {
+    width: 18vw;
+    height: 16vh;
+  }
+
+  .place1 {
+    bottom: 12vh;
+    left: 25vh;
+  }
+
+  .place2 {
+    bottom: 32vh;
+    left: 60vh;
+  }
+
+  .place3 {
+    bottom: 32vh;
+    right: 5vh;
+  }
+
+  .place4 {
+    bottom: 65vh;
+    right: 30vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .circle {
+    width: 24vw;
+    height: 15vh;
+  }
+
+  .place1 {
+    bottom: 5vh;
+    left: 8vw;
+  }
+
+  .place2 {
+    bottom: 25vh;
+    right: 8vw;
+  }
+
+  .place3 {
+    bottom: 45vh;
+    right: 5vw;
+  }
+
+  .place4 {
+    bottom: 65vh;
+    right: 8vw;
+  }
+}
