@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/inri-pkrf/Naama-sFirstProject/static/css/main.80656aa2.css",
+    "main.js": "/inri-pkrf/Naama-sFirstProject/static/js/main.8145ff59.js",
+    "static/js/453.bd0e7e8f.chunk.js": "/inri-pkrf/Naama-sFirstProject/static/js/453.bd0e7e8f.chunk.js",
+    "static/media/road.png": "/inri-pkrf/Naama-sFirstProject/static/media/road.a08887c7ec6870cf3f73.png",
+    "static/media/gili.png": "/inri-pkrf/Naama-sFirstProject/static/media/gili.8af9918b0e340fc79638.png",
+    "static/media/plane-sign-text.png": "/inri-pkrf/Naama-sFirstProject/static/media/plane-sign-text.a0520055a2e4a9cca85d.png",
+    "static/media/travel-bg.jpg": "/inri-pkrf/Naama-sFirstProject/static/media/travel-bg.772c528424774d36e176.jpg",
+    "static/media/roshHanikra.png": "/inri-pkrf/Naama-sFirstProject/static/media/roshHanikra.4381262f0291fefb7887.png",
+    "static/media/again.png": "/inri-pkrf/Naama-sFirstProject/static/media/again.46e98698347cdbad6ba1.png",
+    "static/media/jezreelValley.webp": "/inri-pkrf/Naama-sFirstProject/static/media/jezreelValley.d2c2801a758e31da7414.webp",
+    "static/media/jerusalem.jpg": "/inri-pkrf/Naama-sFirstProject/static/media/jerusalem.01380fb34d30932dca00.jpg",
+    "static/media/deadSea.jpg": "/inri-pkrf/Naama-sFirstProject/static/media/deadSea.9a60b9cd4791905cf872.jpg",
+    "static/media/slick.svg": "/inri-pkrf/Naama-sFirstProject/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/inri-pkrf/Naama-sFirstProject/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/inri-pkrf/Naama-sFirstProject/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/inri-pkrf/Naama-sFirstProject/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/inri-pkrf/Naama-sFirstProject/index.html",
+    "main.80656aa2.css.map": "/inri-pkrf/Naama-sFirstProject/static/css/main.80656aa2.css.map",
+    "main.8145ff59.js.map": "/inri-pkrf/Naama-sFirstProject/static/js/main.8145ff59.js.map",
+    "453.bd0e7e8f.chunk.js.map": "/inri-pkrf/Naama-sFirstProject/static/js/453.bd0e7e8f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.80656aa2.css",
+    "static/js/main.8145ff59.js"
+  ]
+}
